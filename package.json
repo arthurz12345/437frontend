@@ -1,0 +1,22 @@
+{
+  "name": "lit-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx vite",
+    "build": "npx tsc && npx vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
+  },
+  "dependencies": {
+    "@lit/context": "^1.1.0",
+    "@vaadin/router": "^1.7.5",
+    "lit": "^3.1.2"
+  }
+}
