@@ -25,7 +25,7 @@ import {UserLoggedInEvent} from "../components/user-login-signup";
                 `
               : html`
                   <user-login @myLoggedIn=${this._handleLoggedIn}></user-login> 
-                  <p>Don't have an account?  <a @click=${() => {this.isSignup = true;}}>Click here</a> to signup</p>
+                  <p id="no-account">Don't have an account?  <a @click=${() => {this.isSignup = true;}}>Click here</a> to signup</p>
                 `}
                 </div>
           </main>
@@ -48,6 +48,9 @@ import {UserLoggedInEvent} from "../components/user-login-signup";
         a {
           cursor: pointer; 
           color: var(--color-accent);
+        }
+        #no-account{
+          margin-top: 24px;
         }
         `
       ];

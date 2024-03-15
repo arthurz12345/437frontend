@@ -32,7 +32,7 @@ export class UserLogin extends LitElement {
           <form
           @submit=${this._handleLogin}
           @change=${() => (this.loginStatus = 0)}>
-          <h2>Please Login</h2>
+          <h2 id="login-title">Please Login</h2>
           <label>
             <span>Username</span>
             <input name="username" required/>
@@ -41,7 +41,7 @@ export class UserLogin extends LitElement {
             <span>Password</span>
             <input type="password" name="password" required/>
           </label>
-          <button type="submit">Sign in</button>
+          <button type="submit">Go!</button>
           <span></span>
           <p class="error">${this.loginStatus
               ? `Login failed: ${this.loginStatus}`
@@ -72,16 +72,22 @@ export class UserLogin extends LitElement {
         grid-column: start / end;
         text-align: center;
         }
-        input,
-        button {
+        input{
         font: inherit;
         line-height: inherit;
         margin: 0.25em;
         }
+        input{
+          background-color: rgba(0, 0, 0, 0);
+        }
         button {
         grid-column: 2;
+        height: 24px;
         color: var(--color-background-form);
-        background-color: var(--color-accent);
+        background-color: rgba(0, 0, 0, 0);
+        background: none;
+        border: none;
+        cursor: pointer;
         }
         #content {
             font-family: sans-serif;
@@ -91,6 +97,9 @@ export class UserLogin extends LitElement {
         .error {color: red; padding: 0 10px;}
         a {
           color: var(--color-accent);
+        }
+        #login-title{
+          margin-bottom: 38px;
         }
     `;
 
@@ -156,7 +165,7 @@ export class UserSignup extends LitElement {
       <form
       @submit=${this._handleSignup}
       @change=${() => (this.signupStatus = 0)}>
-      <h2>Fill in the fields to signup</h2>
+      <h2 id="signup-title">Sign Up</h2>
       <label>
         <span>Username</span>
         <input name="username" required />
@@ -191,31 +200,44 @@ export class UserSignup extends LitElement {
     h2 { color: var(--color-brand)}
     form {
       padding:20px 30px;
-      background-color: var(--color-background-form);
+      /* background-color: var(--color-background-form); */
+      /* background-image: var(--background-image-lines); */
       display: grid;
       grid-template-columns: [start] 1fr 2fr [end];
       align-items: baseline;
     }
     form > label {
     display: contents;
+    margin-top: 10px;
     }
     form > h2 {
     grid-column: start / end;
     text-align: center;
     }
-    input,
-    button {
+    input {
     font: inherit;
     line-height: inherit;
     margin: 0.25em;
     }
     button {
-    grid-column: 2;
-    color: var(--color-background-form);
-    background-color: var(--color-accent);
-    }
+        grid-column: 2;
+        height: 24px;
+        color: var(--color-background-form);
+        background-color: rgba(0, 0, 0, 0);
+        background: none;
+        border: none;
+        cursor: pointer;
+        }
+    input{
+          background-color: rgba(0, 0, 0, 0);
+        }
+    
     #content {
-        font-family: sans-serif;
+        /* font-family: sans-serif; */
+    }
+    #signup-title{
+      margin-bottom: 36px;
+      
     }
     .error {color: red; padding: 0 10px;}
 `;

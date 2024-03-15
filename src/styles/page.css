@@ -13,6 +13,7 @@
 
 body > section {
   margin: var(--size-spacing-medium);
+  font-family: var(--font-family-body);
 }
 h1,
 h2,
@@ -27,7 +28,7 @@ summary {
 }
 h1 {
   font-size: var(--size-type-xxlarge);
-  font-style: oblique;
+  /* font-style: oblique; */
   line-height: 1;
   font-weight: var(--font-weight-bold);
   margin-top: -10px;
@@ -35,6 +36,7 @@ h1 {
 h2 {
   font-size: var(--size-type-xlarge);
   font-weight: var(--font-weight-bold);
+  
 }
 h3 {
   font-size: var(--size-type-large);
@@ -79,6 +81,7 @@ svg.icon {
   padding-top: 80px;
   /* padding-bottom: 40px; */
   background-color: var(--paper-background-color);
+  
 }
 
 #paper::before{

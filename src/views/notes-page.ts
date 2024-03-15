@@ -39,6 +39,7 @@ export let authContext = createContext<APIUser>("auth");
       render() {
 
         const noteList = html`
+        
         <main class="page">
         <note-header username="${this.user.username}"  @mySignOut=${this._handleSignOut}></note-header>
           <div class="notesContent">

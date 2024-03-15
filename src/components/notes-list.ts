@@ -8,7 +8,7 @@ import {
     APIUser,
     AuthenticatedUser,
     FormDataRequest
-  } from "../rest";
+  } from     "../rest";
 
 @customElement('note-list')
 export class NoteList extends LitElement {
@@ -50,6 +50,21 @@ export class NoteList extends LitElement {
         </dialog>
         `;
 
+        // const showNote = html`
+        //     <dialog id="show-note">
+        //     <form  @submit=${this._handleAddNote}>
+        //         <h2>Add Note for ${this.username}</h2>
+        //         <input type="hidden" name="username" value="${this.username}">
+        //         <textarea name="text" rows="10" cols="50"></textarea>
+        //         <div>
+        //             <button type="submit" class="add-button">Add</button>
+        //             <button type="button" class="add-button" @click=${this._handleAddNoteClose}>close</button>
+        //         </div>
+                
+        //     </form>
+        // </dialog>
+        // `;
+
 
         return html`
             ${this.isAddNote ? dialog: ""}
@@ -77,8 +92,8 @@ export class NoteList extends LitElement {
                 <div>
                     <button @click=${this.toggleSort}>Sort Notes By Created Datetime</button>
                 </div>
-                <div><button @click=${this._handleThemeChange}>Toggle theme</button></div>
-                <div><button @click=${this._signOut}>Sign out</button></div>
+                <!-- <div><button @click=${this._handleThemeChange}>Toggle theme</button></div> -->
+                <!-- <div><button @click=${this._signOut}>Sign out</button></div> -->
                 <!-- ${this.username
                     ? html`
                         <button @click=${this._getAllNotes}>Show All Notes</button>
@@ -90,8 +105,15 @@ export class NoteList extends LitElement {
     `;
     }
     static styles = css`
+   
+        @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
         :host {
         display: contents;
+        }
+        body{
+            font-family: var(--font-family-body);
+
         }
         h2 { color: var(--color-accent)}
         .grid {
@@ -138,8 +160,7 @@ export class NoteList extends LitElement {
         dialog {
             display: flex;
             gap: 4rem;
-            border-color: rgba(0, 0, 0, 0);
-            background-color: var(--add-note-form-background-color);
+            background-image: var(--background-image-lines);
             
         }
         form {
@@ -150,7 +171,12 @@ export class NoteList extends LitElement {
             padding: 10px;
             font-size: 1em;
             margin-bottom: 20px;
-            background-color: var(--text-area-background);
+            /* background-color: var(--text-area-background); */
+            /* background-image: var(--background-image-lines); */
+            background-color: rgba(0, 0, 0, 0);
+            line-height: 2.8em;   
+            border: none;
+            color: var(--text-color);
         }
       
         form > div{
@@ -167,9 +193,13 @@ export class NoteList extends LitElement {
           text-decoration: underline;
         }
         #sub-title{
-            margin-top: 44px;
+            margin-top: 54px;
             margin-bottom: 10px;
         };
+        #add-note-form{
+            border: 2px;
+        }
+        
         
     `;
 

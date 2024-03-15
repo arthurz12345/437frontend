@@ -37,10 +37,8 @@
   --color-text-inverted: rgb(255 255 255);
   --color-text-control-inverted: rgb(255 255 255); */
 
-  --font-family-body: Merriweather, Baskerville, Cambria,
-    "Noto Serif", "Bitstream Charter", serif;
-  --font-family-display: Kanit, "Trebuchet MS", Calibri, Roboto,
-    "Segoe UI", Ubuntu, sans-serif;
+  --font-family-body: "Handlee", cursive;
+  --font-family-display: "Handlee", cursive;
 
   --font-line-height-body: 1.5;
   --font-line-height-display: 1.125;
@@ -58,7 +56,7 @@
   --time-transition-control: 300ms;
 
   --color-background-page: #f1f1f1;
-  --color-background-form: #D8DBCE;
+  /* --color-background-form: #D8DBCE; */
   --color-text:#303030;
   --color-text-control: var(--color-text);
   --color-text-heading: var(--color-accent);
@@ -72,11 +70,12 @@
   --add-note-form-background-color: f5eddc;
   --text-area-background: #f5eddc;
   --main-button-color: #252525;
+  --text-color: #151515;
 }
 
 body.dark-mode {
   --color-background-page: rgb(3, 69, 2);
-  --color-background-form: #1e1f63;
+  --color-background-form: rgba(0, 0, 0, 0);
   --color-text: rgb(240, 240, 223);
   --color-background-paper: #151515;
   --color-accent: var(--color-accent-inverted);
@@ -89,4 +88,5 @@ body.dark-mode {
   --add-note-form-background-color: #303030;
   --text-area-background: #505050;
   --main-button-color: #d0d0d0;
+  --text-color: #f1f1f1;
 }
