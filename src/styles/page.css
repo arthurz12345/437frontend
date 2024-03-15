@@ -8,7 +8,7 @@
   flex-basis: 100%;
   flex-grow: 1;
   width: 100%;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 body > section {
@@ -30,6 +30,7 @@ h1 {
   font-style: oblique;
   line-height: 1;
   font-weight: var(--font-weight-bold);
+  margin-top: -10px;
 }
 h2 {
   font-size: var(--size-type-xlarge);
@@ -38,7 +39,7 @@ h2 {
 h3 {
   font-size: var(--size-type-large);
   font-weight: var(--font-weight-normal);
-  font-style: oblique;
+  font-style: var(--title-margin);
 }
 h4 {
   font-size: var(--size-type-mlarge);
@@ -69,4 +70,28 @@ svg.icon {
   height: var(--size-icon-large);
   width: var(--size-icon-large);
   vertical-align: middle;
+}
+
+#paper{
+  height: 100%;
+  width: 100%;
+  margin: 20px auto;
+  padding-top: 80px;
+  /* padding-bottom: 40px; */
+  background-color: var(--paper-background-color);
+}
+
+#paper::before{
+  content: ' ';
+  width: 2px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 120px;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+#lines{
+  height: 100%;
+  background-image: var(--background-image-lines);
 }

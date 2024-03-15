@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  line-height: 1.5;
+  line-height: 15px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

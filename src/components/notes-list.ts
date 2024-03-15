@@ -20,7 +20,9 @@ export class NoteList extends LitElement {
         this._signOut()
       );
   
-      
+    @property({ reflect: true, type: Boolean })
+    on: boolean = false;
+
     @property()
     username: string = "";
 
@@ -34,14 +36,14 @@ export class NoteList extends LitElement {
 
     render() {
         const dialog = html`
-        <dialog>
-            <form @submit=${this._handleAddNote}>
+        <dialog id="add-note-form">
+            <form  @submit=${this._handleAddNote}>
                 <h2>Add Note for ${this.username}</h2>
                 <input type="hidden" name="username" value="${this.username}">
                 <textarea name="text" rows="10" cols="50"></textarea>
                 <div>
-                    <button type="submit">Add</button>
-                    <button type="button" @click=${this._handleAddNoteClose}>close</button>
+                    <button type="submit" class="add-button">Add</button>
+                    <button type="button" class="add-button" @click=${this._handleAddNoteClose}>close</button>
                 </div>
                 
             </form>
@@ -51,14 +53,14 @@ export class NoteList extends LitElement {
 
         return html`
             ${this.isAddNote ? dialog: ""}
-            <h2>Notes for ${this.username ? `${this.username}` : "all users"}</h2>
+            <h2 id="sub-title">Notes for ${this.username ? `${this.username}` : "all users"}</h2>
 
             <div class="grid">
                 <span><strong></strong></span>
-                <span><strong>Created By</strong></span>
+                <span><strong>Author</strong></span>
                 <span><strong>Note</strong></span>
-                <span><strong>Created Datetime</strong></span>
-                <span><strong>Action</strong></span>
+                <span><strong>Created</strong></span>
+                <span><strong></strong></span>
 
                 ${repeat(this.notes, (note) => note._id, (note, index) => html`
                     <span>${index + 1}</span>
@@ -75,6 +77,7 @@ export class NoteList extends LitElement {
                 <div>
                     <button @click=${this.toggleSort}>Sort Notes By Created Datetime</button>
                 </div>
+                <div><button @click=${this._handleThemeChange}>Toggle theme</button></div>
                 <div><button @click=${this._signOut}>Sign out</button></div>
                 <!-- ${this.username
                     ? html`
@@ -90,22 +93,25 @@ export class NoteList extends LitElement {
         :host {
         display: contents;
         }
+        h2 { color: var(--color-accent)}
         .grid {
             display: grid;
             grid-template-columns: 2em 7em 3fr 1.5fr 5em;
-            border-top: 1px solid black;
-            border-right: 1px solid black;
+            //border-top: 1px solid black;
+            //border-right: 1px solid black;
+            /* background-color: var(--color-background-form); */
+            background-color: rgba(0, 0, 0, 0);
         }
 
         .grid > span {
             padding: 8px 8px;
-            border-left: 1px solid black;
-            border-bottom: 1px solid black;
+            //border-left: 1px solid black;
+            //border-bottom: 1px solid black;
         }
 
         .grid-buttons-container{
             display: grid;
-            grid-template-columns: auto auto auto;
+            grid-template-columns: auto auto auto auto;
             align-content: space-evenly;
             gap: 20px;
             padding: 10px 0;
@@ -116,38 +122,55 @@ export class NoteList extends LitElement {
             /* text-align: center; */
             padding: 20px 0;
             font-size: 20px;
-            }
+            margin-top: -6px;
+        }
         button{
             padding: 10px 20px;
             font-size: 1em;
+            color: var(--main-button-color);
+            /* background-color: var(--color-accent); */
+            /* border-color: var(--color-background-form); */
+            background: none;
+            border: none;
+            cursor: pointer;
         }
 
         dialog {
             display: flex;
             gap: 4rem;
-            border-color: #3333;
+            border-color: rgba(0, 0, 0, 0);
+            background-color: var(--add-note-form-background-color);
+            
         }
         form {
-            display: grid;
-            grid-template-columns: [start]  1fr [end];
-            align-items: baseline;
-        }
-        form > label {
-            display: contents;
-        }
-        form > h2 {
-            grid-column: start / end;
             text-align: center;
+            display: grid;
         }
         form > textarea {
             padding: 10px;
             font-size: 1em;
             margin-bottom: 20px;
+            background-color: var(--text-area-background);
         }
+      
         form > div{
             text-align: center;
         }
-        a {cursor: pointer;}
+        .add-button{
+            background-color: var(--color-background-form);
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+        }
+        a {
+          cursor: pointer; 
+          color: var(--color-accent);
+          text-decoration: underline;
+        }
+        #sub-title{
+            margin-top: 44px;
+            margin-bottom: 10px;
+        };
+        
     `;
 
 
@@ -257,4 +280,15 @@ export class NoteList extends LitElement {
         }
         }
     }
+
+    _handleThemeChange() {
+        const body = document.body;
+        this.on = !this.on;
+        if (this.on) {
+            body.classList.add("dark-mode");
+        }
+        else {
+            body.classList.remove("dark-mode");
+        }
+      }
 }

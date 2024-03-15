@@ -1,5 +1,5 @@
 const Window_ROOT = window.location.origin;;
-const SERVER_ROOT = "https://note-backend-gwaa.onrender.com/api";
+const SERVER_ROOT = "https://express-backend-k4hv.onrender.com/api";
 const TOKEN_KEY = "JWT_AUTH_TOKEN";
 const API_ROOT = "http://localhost:3000/api";
 

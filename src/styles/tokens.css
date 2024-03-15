@@ -19,23 +19,23 @@
   --size-type-xlarge: 2rem;
   --size-type-xxlarge: 2.5rem;
 
-  --color-brand: rgb(42 143 42);
+  --color-brand: rgb(143, 42, 71);
   --color-accent: var(--color-brand);
   --color-accent-inverted: rgb(255 208 0);
   --color-background-control: #ccc;
   --color-background-header: var(--color-brand);
-  --color-background-page: rgb(238 237 231);
-  --color-background-card: white;
+  /* --color-background-page: rgb(238 237 231); */
+  --color-background-card: #f1f1f1;
   --color-border-control: var(--color-accent);
   --color-foreground-control: #fff;
   --color-link-inverted: var(--color-accent-inverted);
   --color-link: var(--color-accent);
   --color-shadow-dropdown: rgb(51 51 51 / 50%);
-  --color-text: rgb(51 51 51);
+  /* --color-text: rgb(51 51 51);
   --color-text-control: var(--color-text);
   --color-text-heading: var(--color-accent);
   --color-text-inverted: rgb(255 255 255);
-  --color-text-control-inverted: rgb(255 255 255);
+  --color-text-control-inverted: rgb(255 255 255); */
 
   --font-family-body: Merriweather, Baskerville, Cambria,
     "Noto Serif", "Bitstream Charter", serif;
@@ -56,13 +56,37 @@
 
   --shadow-dropdown: 0 2px 2px var(--color-shadow-dropdown);
   --time-transition-control: 300ms;
+
+  --color-background-page: #f1f1f1;
+  --color-background-form: #D8DBCE;
+  --color-text:#303030;
+  --color-text-control: var(--color-text);
+  --color-text-heading: var(--color-accent);
+  --color-text-inverted: rgb(255 255 255);
+  --color-text-control-inverted: rgb(255 255 255);
+  --background-image-lines: repeating-linear-gradient(#f5eddc 0px, #f5eddc 30px, teal 31px);
+  --title-margin: 150px;
+  --header-background-color: #f5eddc;
+  --paper-background-color: #f5eddc;
+  --header-button-color: black;
+  --add-note-form-background-color: f5eddc;
+  --text-area-background: #f5eddc;
+  --main-button-color: #252525;
 }
 
 body.dark-mode {
   --color-background-page: rgb(3, 69, 2);
+  --color-background-form: #1e1f63;
   --color-text: rgb(240, 240, 223);
-  --color-background-card: black;
+  --color-background-paper: #151515;
   --color-accent: var(--color-accent-inverted);
   --color-text-control: rgb(51 51 51);
   --color-text-control-inverted: var(--color-background-page);
+  --background-image-lines: repeating-linear-gradient(#151515 0px, #151515 30px, rgba(176, 176, 176, 0.868) 31px);
+  --header-background-color: #151515;
+  --paper-background-color: #151515;
+  --header-button-color: white;
+  --add-note-form-background-color: #303030;
+  --text-area-background: #505050;
+  --main-button-color: #d0d0d0;
 }

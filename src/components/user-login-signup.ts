@@ -57,10 +57,13 @@ export class UserLogin extends LitElement {
         :host {
         display: contents;
         }
+        h2 { color: var(--color-brand)}
         form {
-        display: grid;
-        grid-template-columns: [start] 1fr 2fr [end];
-        align-items: baseline;
+          padding:20px 30px;
+          background-color: var(--color-background-form);
+          display: grid;
+          grid-template-columns: [start] 1fr 2fr [end];
+          align-items: baseline;
         }
         form > label {
         display: contents;
@@ -77,6 +80,8 @@ export class UserLogin extends LitElement {
         }
         button {
         grid-column: 2;
+        color: var(--color-background-form);
+        background-color: var(--color-accent);
         }
         #content {
             font-family: sans-serif;
@@ -84,6 +89,9 @@ export class UserLogin extends LitElement {
             margin: auto;
         }
         .error {color: red; padding: 0 10px;}
+        a {
+          color: var(--color-accent);
+        }
     `;
 
       _handleLogin(event: SubmitEvent) {
@@ -180,10 +188,13 @@ export class UserSignup extends LitElement {
     :host {
     display: contents;
     }
+    h2 { color: var(--color-brand)}
     form {
-    display: grid;
-    grid-template-columns: [start] 1fr 2fr [end];
-    align-items: baseline;
+      padding:20px 30px;
+      background-color: var(--color-background-form);
+      display: grid;
+      grid-template-columns: [start] 1fr 2fr [end];
+      align-items: baseline;
     }
     form > label {
     display: contents;
@@ -200,6 +211,8 @@ export class UserSignup extends LitElement {
     }
     button {
     grid-column: 2;
+    color: var(--color-background-form);
+    background-color: var(--color-accent);
     }
     #content {
         font-family: sans-serif;
